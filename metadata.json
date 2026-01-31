@@ -1,0 +1,7 @@
+{
+  "name": "ShortsMagic AI",
+  "description": "An advanced AI-powered studio to generate professional-grade short videos with synchronized visuals, voice-overs, and captions from a simple prompt.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
