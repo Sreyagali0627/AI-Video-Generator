@@ -80,27 +80,42 @@ Final Video + Captions
 ##  Project Structure
 
 ```text
-AI-Video-Generator-Agent/
+## Project Structure
+
+AI-VIDEO-GENERATOR/
 │
 ├── backend/
-│   ├── app.py                # Main Flask application
-│   ├── requirements.txt      # Backend dependencies
-│   └── services/             # AI services (script, visuals, TTS)
+│   └── main.py                 # Backend entry point (Python API)
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Application pages
-│   │   └── App.tsx           # Root React component
-│   │
-│   ├── package.json          # Frontend dependencies
-│   └── vite.config.ts        # Vite configuration
+│   └── components/
+│       ├── GeneratorForm.tsx   # User input form for video generation
+│       ├── Scene_list.tsx      # Displays generated scenes
+│       └── VideoPlayer.tsx     # Video preview player
 │
-├── README.md                 # Project documentation
-└── .gitignore                # Git ignore rules
+├── src/
+│   ├── App.tsx                 # Main React application
+│   ├── index.tsx               # React DOM entry
+│   ├── geminiService.ts        # AI service integration
+│   ├── types.ts                # TypeScript types
+│   └── utils.ts                # Utility functions
+│
+├── .env                        # Environment variables
+├── .env.local                  # Local environment configuration
+├── .gitignore                  # Git ignored files
+├── index.html                  # HTML entry point
+├── metadata.json               # Project metadata
+├── package.json                # Frontend dependencies
+├── package-lock.json           # Dependency lock file
+├── postcss.config.js           # PostCSS configuration
+├── tailwind.config.js          # Tailwind CSS configuration
+├── tsconfig.json               # TypeScript configuration
+├── vite.config.ts              # Vite configuration
+├── requirements.txt            # Backend dependencies
+└── README.md                   # Project documentation
+
 ```
 ---
-
 ##  Inputs
 
 The application accepts the following inputs:
@@ -233,7 +248,7 @@ See the LICENSE file for complete details.
 
 You can access the live web application here:  
 
-**Live Web Application:** [https://your-project-live-link.com](https://your-project-live-link.com)  
+**Live Web Application:** [https://your-project-live-link.com](https://ai-video-generator-gxwx.onrender.com/)  
 
 > Note: This is a hosted demo of the AI Video / Shorts Generator Agent.  
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
@@ -283,3 +298,6 @@ We would like to thank the following for their guidance and support in this proj
 
 ---
 🌟 Love this work? Your support means a lot!
+
+
+
