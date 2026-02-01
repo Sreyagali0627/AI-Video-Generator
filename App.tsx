@@ -10,7 +10,7 @@ import {
 import { generateScript, generateSceneImage, generateSceneAudio } from './geminiService';
 import { decode, decodeAudioData } from './utils';
 import GeneratorForm from './frontend/components/GeneratorForm';
-import SceneList from './frontend/components/SceneList';
+import SceneList from './frontend/components/Scene_list';
 import VideoPlayer from './frontend/components/VideoPlayer';
 import { 
   Layers, 
