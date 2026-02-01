@@ -80,7 +80,7 @@ Final Video + Captions
 ##  Project Structure
 
 ```text
-## 📁 Project Structure
+## Project Structure
 
 AI-VIDEO-GENERATOR/
 │
@@ -298,5 +298,6 @@ We would like to thank the following for their guidance and support in this proj
 
 ---
 🌟 Love this work? Your support means a lot!
+
 
 
