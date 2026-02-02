@@ -80,28 +80,28 @@ Final Video + Captions
 ##  Project Structure
 
 ```text
+
 ## Project Structure
 
-AI-VIDEO-GENERATOR/
+AI-VIDEO-GEN/
 │
-├── backend/
-│   └── main.py                 # Backend entry point (Python API)
+├── backend/                    # Backend Python API
+│   ├── main.py                 # Main backend server file
+│   ├── test_api.py             # API tests
+│   ├── __pycache__/            # Python cache folder
+│   └── .pytest_cache/          # Pytest cache folder
 │
-├── frontend/
-│   └── components/
-│       ├── GeneratorForm.tsx   # User input form for video generation
-│       ├── Scene_list.tsx      # Displays generated scenes
-│       └── VideoPlayer.tsx     # Video preview player
-│
-├── src/
-│   ├── App.tsx                 # Main React application
-│   ├── index.tsx               # React DOM entry
-│   ├── geminiService.ts        # AI service integration
-│   ├── types.ts                # TypeScript types
-│   └── utils.ts                # Utility functions
+├── frontend/                   # Frontend React/TypeScript app
+│   ├── src/                    # Source code
+│   │   ├── App.tsx             # Main React component
+│   │   ├── index.tsx           # React entry point
+│   │   ├── geminiService.ts    # AI service integration
+│   │   ├── types.ts            # TypeScript types
+│   │   └── utils.ts            # Utility functions
+│   └── node_modules/           # Node dependencies
 │
 ├── .env                        # Environment variables
-├── .env.local                  # Local environment configuration
+├── .env.local                  # Local environment overrides
 ├── .gitignore                  # Git ignored files
 ├── index.html                  # HTML entry point
 ├── metadata.json               # Project metadata
@@ -111,11 +111,11 @@ AI-VIDEO-GENERATOR/
 ├── tailwind.config.js          # Tailwind CSS configuration
 ├── tsconfig.json               # TypeScript configuration
 ├── vite.config.ts              # Vite configuration
-├── requirements.txt            # Backend dependencies
-└── README.md                   # Project documentation
+└── requirements.txt            # Backend dependencies
 
 ```
 ---
+
 ##  Inputs
 
 The application accepts the following inputs:
@@ -248,7 +248,7 @@ See the LICENSE file for complete details.
 
 You can access the live web application here:  
 
-**Live Web Application:** [https://your-project-live-link.com](https://ai-video-generator-gxwx.onrender.com/)  
+**Live Web Application:** [https://your-project-live-link.com](https://your-project-live-link.com)  
 
 > Note: This is a hosted demo of the AI Video / Shorts Generator Agent.  
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
@@ -297,8 +297,3 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
-
-
-
-
-
