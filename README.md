@@ -297,7 +297,7 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
-🌟 Love this work? Your support means a lot!
+
 
 
 
