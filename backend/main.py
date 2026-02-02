@@ -1,10 +1,7 @@
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
-import base64
-import os
 
 app = FastAPI(title="ShortsMagic AI Backend")
 
@@ -17,6 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ---------------------------
+# Data Models
+# ---------------------------
 class Scene(BaseModel):
     id: str
     sceneNumber: int
@@ -26,35 +26,47 @@ class Scene(BaseModel):
     audioData: Optional[str] = None
     duration: Optional[float] = None
 
+
 class VideoProject(BaseModel):
     title: str
     scenes: List[Scene]
 
+
+# ---------------------------
+# Routes
+# ---------------------------
 @app.get("/")
 async def root():
-    return {"message": "ShortsMagic AI Backend is running", "status": "ok"}
+    return {
+        "message": "ShortsMagic AI Backend is running",
+        "status": "ok"
+    }
+
 
 @app.post("/export")
 async def export_video(project: VideoProject):
     """
-    In a full production environment with FFmpeg installed, this would:
-    1. Decode all base64 images and audio.
-    2. Use FFmpeg to stitch them into an MP4.
-    3. Return the MP4 file.
-    
-    For this implementation, we return a success status and the project
-    data which the frontend can then trigger a high-quality browser-side download for.
+    In a production environment with FFmpeg installed, this would:
+    1. Decode base64 images and audio
+    2. Stitch scenes into a video
+    3. Return the generated MP4
+
+    For now, this endpoint validates input and simulates processing.
     """
     try:
+        # ❌ Validation check
         if not project.scenes:
-            raise HTTPException(status_code=400, detail="No scenes provided")
-        
-        # Simulate processing delay
+            raise HTTPException(
+                status_code=400,
+                detail="No scenes provided"
+            )
+
+        # ⏳ Simulate processing delay
         import time
         time.sleep(1)
-        
+
         print(f"Export request received for project: {project.title}")
-        
+
         return {
             "status": "success",
             "message": f"Project '{project.title}' processed. Video assembly initiated.",
@@ -62,13 +74,31 @@ async def export_video(project: VideoProject):
             "project_summary": {
                 "title": project.title,
                 "scene_count": len(project.scenes),
-                "total_duration": sum(s.duration or 0 for s in project.scenes)
+                "total_duration": sum(scene.duration or 0 for scene in project.scenes)
             }
         }
-    except Exception as e:
-        print(f"Error in export: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
 
+    # ✅ IMPORTANT FIX
+    except HTTPException as http_exc:
+        # Re-raise HTTP exceptions so FastAPI returns correct status codes
+        raise http_exc
+
+    except Exception as e:
+        print(f"Unexpected error in export: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail="Internal server error"
+        )
+
+
+# ---------------------------
+# App Runner
+# ---------------------------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+    uvicorn.run(
+        app,
+        host="127.0.0.1",
+        port=8000,
+        log_level="info"
+    )
