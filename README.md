@@ -248,7 +248,7 @@ See the LICENSE file for complete details.
 
 You can access the live web application here:  
 
-**Live Web Application:** [https://your-project-live-link.com](https://your-project-live-link.com)  
+**Live Web Application:** [https://your-project-live-link.com](https://ai-video-generator-gxwx.onrender.com/)  
 
 > Note: This is a hosted demo of the AI Video / Shorts Generator Agent.  
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
@@ -297,3 +297,4 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
