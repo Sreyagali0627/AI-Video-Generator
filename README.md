@@ -254,85 +254,48 @@ You can access the live web application here:
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
 
 
-##  Run Test Cases (Detailed Guide)
+## Running Tests Using Docker
 
-Follow the steps below to run the test cases properly.
+Docker ensures that tests run in a clean Linux environment, independent of your local system.
 
-###  Go to Backend Folder
+---
 
-Open terminal and navigate to your backend directory:
+### Build the Docker Image
+
+Make sure you are in the project root directory (where Dockerfile is present), then run:
 
 ```bash
-cd backend
+docker build -t shortsmagic-tests .
 ```
 
 ---
 
-###  (Optional but Recommended) Create Virtual Environment
+###  Run the Test Container
 
 ```bash
-python -m venv venv
+docker run --rm shortsmagic-tests
 ```
 
-Activate it:
-
-**Windows:**
-```bash
-venv\Scripts\activate
-```
-
-**Mac/Linux:**
-```bash
-source venv/bin/activate
-```
+- `--rm` automatically removes the container after execution.
 
 ---
 
-###  Install Required Packages
+### Expected Output
+
+If all tests pass, you should see something like:
 
 ```bash
-pip install fastapi uvicorn pytest httpx
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /app/backend
+plugins: anyio-4.12.1
+collected 4 items
+
+test_api.py .Export request received for project: AI in Space Exploration
+...
+
+============================== 4 passed in 2.44s ===============================
 ```
-
-You can also install pytest separately if needed:
-
-```bash
-pip install pytest
-```
-
----
-
-###  Verify Test File Exists
-
-Make sure this file exists inside backend folder:
-
-```
-test_api.py
-```
-
----
-
-###  Run All Test Cases
-
-```bash
-pytest
-```
-
-OR run specific test file:
-
-```bash
-pytest test_api.py
-```
-
----
-
-###  Run with Detailed Output (Optional)
-
-```bash
-pytest -v
-```
-
----
 
 
 
@@ -381,6 +344,7 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
 
 
