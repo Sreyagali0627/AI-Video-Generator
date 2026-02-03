@@ -260,7 +260,7 @@ Docker ensures that tests run in a clean Linux environment, independent of your 
 
 ---
 
-### Build the Docker Image
+### step 1: Build the Docker Image
 
 Make sure you are in the project root directory (where Dockerfile is present), then run:
 
@@ -270,7 +270,8 @@ docker build -t shortsmagic-tests .
 
 ---
 
-###  Run the Test Container
+###  Step 2: Run the Test Container
+docker run shortsmagic-tests
 
 ```bash
 docker run --rm shortsmagic-tests
@@ -344,6 +345,7 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
 
 
