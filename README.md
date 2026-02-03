@@ -273,12 +273,12 @@ docker build -t shortsmagic-tests .
 
 ---
 
-###  Step 2: Run the Test Container
-docker run shortsmagic-tests
+### step 2: Run the Test Container
 
 ```bash
-docker run --rm shortsmagic-tests
+docker run shortsmagic-tests
 ```
+
 
 - `--rm` automatically removes the container after execution.
 
@@ -348,6 +348,7 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
 
 
