@@ -254,6 +254,32 @@ You can access the live web application here:
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
 
 
+## Run Test Cases
+
+To run all test cases:
+
+```bash
+pytest test_api.py
+```
+
+If pytest is not installed:
+
+```bash
+pip install pytest
+```
+
+You should see output like:
+
+```bash
+================ test session starts ================
+collected X items
+
+test_api.py .......                      
+```
+
+
+
+
 ##  Edge Cases and Limitations
 
 ### Positive Edge Cases
@@ -297,4 +323,5 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
