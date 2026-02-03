@@ -79,42 +79,45 @@ Final Video + Captions
 ---
 ##  Project Structure
 
-```text
-
-## Project Structure
-
+```
 AI-VIDEO-GEN/
 │
-├── backend/                    # Backend Python API
-│   ├── main.py                 # Main backend server file
-│   ├── test_api.py             # API tests
-│   ├── __pycache__/            # Python cache folder
-│   └── .pytest_cache/          # Pytest cache folder
+├── .github/
 │
-├── frontend/                   # Frontend React/TypeScript app
-│   ├── src/                    # Source code
-│   │   ├── App.tsx             # Main React component
-│   │   ├── index.tsx           # React entry point
-│   │   ├── geminiService.ts    # AI service integration
-│   │   ├── types.ts            # TypeScript types
-│   │   └── utils.ts            # Utility functions
-│   └── node_modules/           # Node dependencies
-│
-├── .env                        # Environment variables
-├── .env.local                  # Local environment overrides
-├── .gitignore                  # Git ignored files
-├── index.html                  # HTML entry point
-├── metadata.json               # Project metadata
-├── package.json                # Frontend dependencies
-├── package-lock.json           # Dependency lock file
-├── postcss.config.js           # PostCSS configuration
-├── tailwind.config.js          # Tailwind CSS configuration
-├── tsconfig.json               # TypeScript configuration
-├── vite.config.ts              # Vite configuration
-└── requirements.txt            # Backend dependencies
-
+├── AI-Video-Generator/
+│   ├── .github/
+│   │
+│   ├── backend/
+│   │   ├── __pycache__/
+│   │   ├── .pytest_cache/
+│   │   ├── main.py
+│   │   ├── test_api.py
+│   │
+│   ├── frontend/
+│   │   ├── node_modules/
+│   │   └── src/
+│   │
+│   ├── .env
+│   ├── .env.local
+│   ├── .gitignore
+│   ├── App.tsx
+│   ├── Dockerfile
+│   ├── geminiService.ts
+│   ├── index.html
+│   ├── index.tsx
+│   ├── metadata.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   ├── types.ts
+│   ├── utils.ts
+│   └── vite.config.ts
 ```
----
+
 
 ##  Inputs
 
@@ -345,6 +348,7 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
 
 
