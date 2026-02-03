@@ -254,28 +254,86 @@ You can access the live web application here:
 > All features including script generation, AI visuals, voice-over, captions, and video download are available in real-time.
 
 
-## Run Test Cases
+##  Run Test Cases (Detailed Guide)
 
-To run all test cases:
+Follow the steps below to run the test cases properly.
+
+###  Go to Backend Folder
+
+Open terminal and navigate to your backend directory:
 
 ```bash
-pytest test_api.py
+cd backend
 ```
 
-If pytest is not installed:
+---
+
+###  (Optional but Recommended) Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**Mac/Linux:**
+```bash
+source venv/bin/activate
+```
+
+---
+
+###  Install Required Packages
+
+```bash
+pip install fastapi uvicorn pytest httpx
+```
+
+You can also install pytest separately if needed:
 
 ```bash
 pip install pytest
 ```
 
-You should see output like:
+---
+
+###  Verify Test File Exists
+
+Make sure this file exists inside backend folder:
+
+```
+test_api.py
+```
+
+---
+
+###  Run All Test Cases
 
 ```bash
-================ test session starts ================
-collected X items
-
-test_api.py .......                      
+pytest
 ```
+
+OR run specific test file:
+
+```bash
+pytest test_api.py
+```
+
+---
+
+###  Run with Detailed Output (Optional)
+
+```bash
+pytest -v
+```
+
+---
+
 
 
 
@@ -323,5 +381,6 @@ We would like to thank the following for their guidance and support in this proj
 - Inspiration from similar AI-powered video generation projects
 
 ---
+
 
 
